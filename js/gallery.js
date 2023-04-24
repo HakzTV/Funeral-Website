@@ -1,15 +1,5 @@
 
 
-const mainSection = document.querySelector('main')
-
-  $(window).scroll(function () {
-    if ($(document).scrollTop() >= mainSection.offsetTop) {
-      $(".nav").addClass("affix");
-    } else {
-      $(".nav").removeClass("affix");
-    }
-  });
-
 // Gallery individual view
 
 let darkBoxVisible = false;
