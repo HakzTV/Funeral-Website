@@ -473,7 +473,7 @@ footer a {
 }
 .slider .slidewrapper:nth-child(6) {
   background-image: url(/images/gallery-6.jpg);
-  background-position: center center;
+  background-position: 70% 50%;
   background-size: cover;
 }
 .slider .slidewrapper:nth-child(7) {
@@ -488,7 +488,7 @@ footer a {
 }
 .slider .slidewrapper:nth-child(9) {
   background-image: url(/images/gallery-8.jpg);
-  background-position: center center;
+  background-position: top center;
   background-size: cover;
 }
 .slider .slidewrapper:nth-child(10) {
@@ -500,6 +500,9 @@ footer a {
 footer {
   background-color: var(--nav-bg-clr);
   padding: 1.5rem;
+}
+footer .content p {
+  font-size: 1.3rem !important;
 }
 /* Animation Section */
 
@@ -772,6 +775,8 @@ footer {
     background-color: var(--nav-bg-clr);
     /*same background color of navbar*/
     background-position: center top;
+    position: relative;
+    z-index: 2000;
   }
   .nav div.main_list ul li {
     width: 100%;
