@@ -3,6 +3,7 @@
 :root {
   --nav-bg-clr: #55514a;
   --bg: #e4d9c6;
+  --clr: #111;
 }
 * {
   box-sizing: border-box;
@@ -94,7 +95,7 @@ footer a {
 }
 
 .nav div.logo a:hover {
-  color: #111;
+  color: var(--clr);
 }
 
 .nav div.main_list {
@@ -349,7 +350,16 @@ footer a {
 
 /* carousel */
 .carousel {
-  margin: 5rem 0;
+  margin: 8rem 0;
+  position: relative;
+}
+
+.carousel .family-wishing__title::after {
+  content: attr(data-gallery);
+  left: 420px;
+}
+.carousel .family-wishing__title::before {
+  right: 500px;
 }
 .slider {
   display: flex;
@@ -431,6 +441,57 @@ footer a {
   padding-right: calc(50vw - (var(--slider-size) / 2));
 }
 
+/* Slider Images */
+.slider .slidewrapper:nth-child(1) {
+  background-image: url(/images/gallery-1.jpeg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(2) {
+  background-image: url(/images/gallery-10.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(3) {
+  background-image: url(/images/gallery-3.jpeg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(4) {
+  background-image: url(/images/gallery-4.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(5) {
+  background-image: url(/images/gallery-5.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(6) {
+  background-image: url(/images/gallery-6.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(7) {
+  background-image: url(/images/gallery-7.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(8) {
+  background-image: url(/images/gallery-2.jpeg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(9) {
+  background-image: url(/images/gallery-8.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.slider .slidewrapper:nth-child(10) {
+  background-image: url(/images/bg-bio.jpg);
+  background-position: center center;
+  background-size: cover;
+}
 /* Footer content */
 footer {
   background-color: var(--nav-bg-clr);
@@ -766,5 +827,54 @@ footer {
   }
   .fam-pic::after {
     display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .content .family-wishing__title::after {
+    font-size: 3.5rem;
+    left: 30px;
+    top: -10px;
+  }
+  .content .family-wishing__title::before {
+    width: 10px;
+    height: 10px;
+    top: 20px;
+    right: 50px;
+  }
+  .arrangements .family-wishing__title::after {
+    font-size: 3.5rem;
+  }
+  .parent {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .auto-text {
+    background-color: var(--bg);
+    width: 100%;
+    padding: 2.5rem 3.5rem;
+    top: 20rem !important;
+    left: 0 !important;
+  }
+  .auto-text__title {
+    font-size: 2.5rem;
+    color: var(--clr);
+  }
+  .auto-text__title::before {
+    background-color: var(--clr);
+    left: -70px;
+    top: 20px;
+  }
+  .auto-text__desc {
+    width: 100%;
+    color: var(--clr);
+  }
+  .carousel .family-wishing__title::before {
+    right: 145px;
+    height: 15px;
+    width: 15px;
+  }
+  .carousel .family-wishing__title::after {
+    font-size: 3.5rem;
+    left: 20%;
   }
 }

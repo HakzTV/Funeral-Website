@@ -46,7 +46,7 @@ const slides = document.querySelectorAll(".slide");
 const slider = document.querySelector(".slider");
 
 let currentSlide = 0;
-const slideInterval = setInterval(nextSlide, 1000);
+const slideInterval = setInterval(nextSlide, 5000);
 
 function nextSlide() {
   slides[currentSlide].classList.remove("active");
