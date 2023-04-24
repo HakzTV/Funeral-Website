@@ -295,11 +295,15 @@ footer a {
 }
 
 /* Auto Biography */
+.mobi-view {
+  display: none;
+}
 .auto-text {
   color: white;
   top: 40% !important;
   left: 15% !important;
 }
+
 .auto-text__title {
   font-size: 5.5rem;
   position: relative;
@@ -831,6 +835,10 @@ footer {
 }
 
 @media (max-width: 450px) {
+  .mobi-view {
+    display: block;
+  }
+
   .nav div.logo a {
     font-size: 2rem;
   }
@@ -850,6 +858,9 @@ footer {
   }
   .parent {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  #scene {
+    display: none;
   }
   .auto-text {
     background-color: var(--bg);
