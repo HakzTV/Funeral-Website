@@ -80,6 +80,11 @@
   }
   .ga .family-wishing__title::before {
     top: 20px;
-    right: 120px;
+    right: 100px;
+  }
+  .zoom-heading__bio {
+    color: #fff;
+    position: relative;
+    left: 20%;
   }
 }

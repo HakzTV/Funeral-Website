@@ -4,6 +4,7 @@
   --nav-bg-clr: #55514a;
   --bg: #e4d9c6;
   --clr: #111;
+  --slider-size: 310px;
 }
 * {
   box-sizing: border-box;
@@ -14,7 +15,6 @@
 body {
   font-family: "Cormorant Garamond", serif;
   color: #333;
-  font-size: 1.4rem;
   overflow-x: hidden;
 
   line-height: 2rem;
@@ -127,7 +127,7 @@ footer a {
 }
 
 .nav div.main_list ul li a:hover {
-  color: #00e676;
+  color: var(--nav-bg-clr);
 }
 
 /* --- hero section --- */
@@ -374,7 +374,7 @@ footer a {
   width: var(--slider-size);
   margin: 1em auto;
 
-  border-radius: var(--slider-border-radius);
+  border-radius: 5px;
 }
 
 /* Hide Scrollbar itself */
@@ -409,6 +409,10 @@ footer a {
   /* Give me some height */
   min-height: 400px;
   aspect-ratio: 9/10;
+
+  max-width: 100%;
+  width: fit-content;
+
   /* Center text */
   display: grid;
   place-content: center;
@@ -780,12 +784,11 @@ footer .content p {
   }
   .nav div.main_list ul li {
     width: 100%;
-    text-align: right;
+    text-align: left;
   }
   .nav div.main_list ul li a {
-    text-align: center;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 20px;
   }
   .nav div.media_button {
@@ -840,6 +843,17 @@ footer .content p {
 }
 
 @media (max-width: 450px) {
+  .zoom-txt {
+    top: 35%;
+    left: 32%;
+  }
+  .zoom-heading h1 {
+    padding: 0.5px 0;
+    font-size: 1.5rem;
+  }
+  .hero-sub {
+    font-size: 0.75rem;
+  }
   .mobi-view {
     display: block;
   }
@@ -870,7 +884,7 @@ footer .content p {
   .auto-text {
     background-color: var(--bg);
     width: 100%;
-    padding: 2.5rem 3.5rem;
+    padding: 3.5rem 2.5rem;
     top: 50% !important;
     left: 0 !important;
     z-index: 10;
@@ -888,13 +902,30 @@ footer .content p {
     width: 100%;
     color: var(--clr);
   }
+  .content .family-wishing__title::before {
+    right: 70px;
+  }
+  .content .family-wishing__title::after {
+    font-size: 2.8rem;
+  }
   .carousel .family-wishing__title::before {
-    right: 145px;
-    height: 15px;
-    width: 15px;
+    right: 125px;
+    height: 10px;
+    width: 10px;
   }
   .carousel .family-wishing__title::after {
     font-size: 3.5rem;
     left: 20%;
+  }
+  .zoom-heading__bio {
+    color: #fff;
+    position: relative;
+    left: -25px;
+  }
+  .zoom-heading__bio2 {
+    color: #fff;
+    position: relative;
+    left: 15px;
+    top: 20px;
   }
 }
