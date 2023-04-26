@@ -95,7 +95,7 @@ footer a {
 }
 
 .nav div.logo a:hover {
-  color: var(--clr);
+  color: black;
 }
 
 .nav div.main_list {
@@ -127,7 +127,7 @@ footer a {
 }
 
 .nav div.main_list ul li a:hover {
-  color: var(--nav-bg-clr);
+  color: black;
 }
 
 /* --- hero section --- */
