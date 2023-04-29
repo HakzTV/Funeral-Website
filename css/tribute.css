@@ -25,9 +25,20 @@
   content: attr(data-tribute);
   /* font-size: 1.5rem; */
   top: -40px;
-  left: 23%;
+  left: 25%;
 }
 .tri .family-wishing__title::before {
+  left: 82%;
+  height: 25px;
+  width: 25px;
+}
+.tri3 .family-wishing__title::after {
+  content: attr(data-tribute);
+  /* font-size: 1.5rem; */
+  top: -40px;
+  left: 23%;
+}
+.tri3 .family-wishing__title::before {
   left: 68%;
   height: 25px;
   width: 25px;
@@ -43,10 +54,14 @@
 }
 
 @media screen and (max-width: 450px) {
-  .tri .family-wishing__title::before {
-    left: 60%;
+  .tri .family-wishing__title::before,
+  .tri3 .family-wishing__title::before {
+    left: 62.5%;
     top: -10px;
     height: 12px;
     width: 12px;
+  }
+  .tri .family-wishing__title::after {
+    left: 10%;
   }
 }

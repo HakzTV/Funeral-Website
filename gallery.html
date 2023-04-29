@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
 
     <link rel="stylesheet" href="css/gallery.css" />
@@ -44,16 +46,14 @@
         </div>
       </nav>
 
-      <div class="zoom">
-        <img
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/927610/pexels-photo-587409.jpeg"
-        />
+      <div class="gall zoom">
+        <img src="images/gallery-20.jpg" />
 
         <div class="zoom-txt">
-          <div class="zoom-heading">
+          <div class="zoom-heading" data-aos="fade-up" data-aos-delay="300">
             <h1>A beautiful soul</h1>
           </div>
-          <p class="hero-sub">
+          <p class="hero-sub" data-aos="fade-up" data-aos-delay="450">
             In rememberance of Emmanuel Offei Koram (a.k.a. Ackork)
           </p>
         </div>
@@ -61,9 +61,22 @@
     </header>
     <main>
       <section class="content ga" style="margin-top: 50px">
-        <h1 class="family-wishing__title" data-gallery="Gallery">Gallery</h1>
-        <div id="gallery">
-          <img src="images/gallery-21.jpg" />
+        <h1
+          class="family-wishing__title"
+          data-gallery="Gallery"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="600"
+        >
+          Gallery
+        </h1>
+        <div id="gallery" data-aos="fade-up" data-aos-easing="ease-in-out">
+          <img
+            src="images/gallery-21.jpg"
+            data-aos="fade-up"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="700"
+          />
           <img src="images/gallery-1.jpeg" />
           <img src="images/gallery-2.jpeg" />
           <img src="images/gallery-3.jpeg" />
@@ -114,7 +127,25 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      let tl = gsap.timeline({
+        defaults: { ease: "power2.out" },
+      });
+
+      function animationComplete() {
+        document.querySelector(".loader").style.zIndex = "1";
+        console.log("It worked");
+      }
+
+      tl.to(".blinder", {
+        scaleY: 0,
+        stagger: 0.3,
+        ease: "power3.out",
+        onComplete: animationComplete,
+      });
+    </script>
     <script src="js/index.js"></script>
+
     <script src="js/gallery.js"></script>
   </body>
 </html>

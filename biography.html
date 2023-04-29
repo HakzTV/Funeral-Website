@@ -4,20 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
 
     <title>Paa Offei's Biography</title>
   </head>
   <body>
-    <div class="loader">
-      <div class="blinder-container">
-        <div class="blinder"></div>
-        <div class="blinder"></div>
-        <div class="blinder"></div>
-        <div class="blinder"></div>
-        <div class="blinder"></div>
-      </div>
-    </div>
     <header>
       <nav class="nav">
         <div class="container">
@@ -94,6 +86,15 @@
         </a>
       </div>
     </footer>
+    <div class="loader">
+      <div class="blinder-container">
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+      </div>
+    </div>
     <!-- Scripts -->
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script
@@ -106,6 +107,23 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      let tl = gsap.timeline({
+        defaults: { ease: "power2.out" },
+      });
+
+      function animationComplete() {
+        document.querySelector(".loader").style.zIndex = "1";
+        console.log("It worked");
+      }
+
+      tl.to(".blinder", {
+        scaleY: 0,
+        stagger: 0.3,
+        ease: "power3.out",
+        onComplete: animationComplete,
+      });
+    </script>
     <script src="js/index.js"></script>
   </body>
 </html>

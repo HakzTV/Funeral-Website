@@ -98,17 +98,3 @@ slider.addEventListener("mouseleave", () => {
   slideInterval = setInterval(nextSlide, 5000);
 });
 
-let tl = gsap.timeline({
-  defaults:{ease: "power2.out"}
-});
-const content = document.querySelectorAll('section')
-
-const imgLoad = imagesLoaded(content)
-
-imgLoad.on('done', instance =>{
-  tl.to('.blinder', {
-    scaleY: 0,
-    stagger:.3,
-    ease:'power3.out' 
-  })
-})

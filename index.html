@@ -10,14 +10,7 @@
     <title>Paa Offei</title>
   </head>
   <body>
-    <div class="loader">
-      <div class="blinder-container">
-        <div class="blinder"></div>
-        <div class="blinder"></div>
-        <div class="blinder"></div>
-        <div class="blinder"></div>
-        <div class="blinder"></div>
-      </div>
+ 
 
 
     </div>
@@ -301,7 +294,16 @@
        <a  href="https://www.instagram.com/HakzTv/" style="text-decoration: none"><p style="text-align: center; font-size: 2rem ;color: #fff;">Developed By Tee 💓 &copy; </p> </a> 
       </div>
     </footer>
+    <div class="loader">
+      <div class="blinder-container">
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+      </div>
     <!-- Scripts -->
+   
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
@@ -313,6 +315,24 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      let tl = gsap.timeline({
+  defaults:{ease: "power2.out"}
+});
+
+
+function animationComplete(){
+  document.querySelector(".loader").style.zIndex = "1";
+  console.log('It worked')
+}
+
+tl.to('.blinder', {
+  scaleY: 0,
+  stagger:.3,
+  ease:'power3.out' , 
+  onComplete: animationComplete
+})
+    </script>
     <script src="js/index.js"></script>
   </body>
 </html>
