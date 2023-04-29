@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;600;700;900&family=Lato:wght@300;400;700&display=swap");
 
 :root {
-  --nav-bg-clr: #55514a;
+  --navyBlue: #000080;
+  --navyHover: #3333ad;
+  --gold: #ddca5e;
   --bg: #e4d9c6;
   --clr: #111;
   --slider-size: 310px;
@@ -21,6 +23,10 @@ body {
 }
 
 /* Helpers */
+.nav-active {
+  color: #000 !important;
+  font-weight: 700;
+}
 .lato {
   font-family: "Lato", sans-serif;
   color: #515151;
@@ -33,18 +39,31 @@ a {
   font-family: "Cormorant Garamond", serif;
 
   outline: none;
-  border: 1px solid var(--nav-bg-clr);
-  background-color: var(--nav-bg-clr);
+  border: 1px solid var(--navyBlue);
+  background-color: var(--navyBlue);
   padding: 0.8rem 1.5rem;
   margin: 1rem 0;
   cursor: pointer;
   transform: translateY(0px);
   transition: all ease-out 0.5s;
 }
+.outline {
+  background-color: transparent !important;
+}
+.outline a {
+  color: #000 !important;
+  font-weight: 700;
+}
+.outline:hover {
+  background-color: var(--navyHover) !important;
+  color: #fff !important;
+}
 .btn:hover {
   transition: all ease-in-out 0.5s;
   transform: translateY(-5px);
-  background-color: #353432;
+  border: 1px solid var(--navyHover);
+
+  background-color: var(--navyHover);
 }
 .btn a {
   color: white;
@@ -71,12 +90,44 @@ footer a {
   color: #ccc;
 }
 
+/* Loading animation */
+svg {
+  width: 200px;
+  height: 300px;
+}
+
+rect,
+path {
+  transition: all 1s;
+}
+
+.loader {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+}
+.blinder-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.blinder {
+  background-color: var(--gold);
+  height: 100vh;
+  flex: 1;
+  transform-origin: top;
+}
+
 /* Navbar */
 .nav {
   width: 100%;
   height: 65px;
   position: fixed;
-  z-index: 20;
+  z-index: 200;
   line-height: 65px;
   padding: 0 2rem;
 }
@@ -142,13 +193,15 @@ footer a {
   top: 0%;
   left: 50%;
   max-width: 200%;
+  height: auto;
   width: 100%;
   transform: translateX(-50%);
 }
 .zoom-txt {
   position: absolute;
   top: 40%;
-  left: 40%;
+  left: 35%;
+  padding: 0 4rem;
 }
 .zoom-heading h1 {
   font-size: 3.5rem;
@@ -179,6 +232,7 @@ footer a {
   position: absolute;
   padding-top: 20px;
   color: #fff;
+
   font-size: 1.5rem;
 }
 
@@ -208,7 +262,7 @@ footer a {
   z-index: 1;
 }
 .description {
-  background-color: var(--bg);
+  background-color: var(--gold);
   color: #000;
   position: relative;
   z-index: 0;
@@ -240,6 +294,7 @@ footer a {
   opacity: 0.5;
   font-size: 8rem;
   position: absolute;
+  color: var(--navyBlue);
   top: -40px;
   left: 50px;
 }
@@ -250,7 +305,7 @@ footer a {
   border-radius: 50%;
   height: 30px;
   width: 30px;
-  background-color: var(--nav-bg-clr);
+  background-color: var(--navyBlue);
   position: absolute;
   top: 0px;
   right: 150px;
@@ -346,10 +401,13 @@ footer a {
   grid-gap: 20px;
 }
 .child {
-  background-color: var(--nav-bg-clr);
-  color: #fff;
+  background-color: var(--gold);
+  color: #000;
   padding: 1.2rem 2.5rem;
   text-align: center;
+}
+.child p {
+  font-family: "Lato", sans-serif;
 }
 
 /* carousel */
@@ -502,7 +560,7 @@ footer a {
 }
 /* Footer content */
 footer {
-  background-color: var(--nav-bg-clr);
+  background-color: var(--gold);
   padding: 1.5rem;
 }
 footer .content p {
@@ -533,7 +591,7 @@ footer .content p {
 
 .affix {
   padding: 0;
-  background-color: var(--nav-bg-clr);
+  background-color: var(--gold);
   transition: all ease-in 0.4s;
 }
 .navTrigger i:nth-child(1) {
@@ -776,7 +834,7 @@ footer .content p {
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: var(--nav-bg-clr);
+    background-color: var(--gold);
     /*same background color of navbar*/
     background-position: center top;
     position: relative;
@@ -845,9 +903,13 @@ footer .content p {
 @media (max-width: 450px) {
   .zoom-txt {
     top: 35%;
-    left: 32%;
+    left: 25%;
+    padding: 0 0;
+    max-width: 100%;
+    width: 50%;
   }
   .zoom-heading h1 {
+    text-align: center;
     padding: 0.5px 0;
     font-size: 1.5rem;
   }
@@ -875,6 +937,7 @@ footer .content p {
   .arrangements .family-wishing__title::after {
     font-size: 3.5rem;
   }
+
   .parent {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
@@ -903,7 +966,7 @@ footer .content p {
     color: var(--clr);
   }
   .content .family-wishing__title::before {
-    right: 70px;
+    right: 53px;
   }
   .content .family-wishing__title::after {
     font-size: 2.8rem;

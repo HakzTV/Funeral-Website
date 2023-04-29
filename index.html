@@ -5,11 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
     <title>Paa Offei</title>
   </head>
   <body>
-    <header>
+    <div class="loader">
+      <div class="blinder-container">
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+        <div class="blinder"></div>
+      </div>
+
+
+    </div>
+    <header class="mask">
       <nav class="nav">
         <div class="container">
           <div class="logo">
@@ -17,10 +29,11 @@
           </div>
           <div id="mainListDiv" class="main_list">
             <ul class="navlinks">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html" class="nav-active">Home</a></li>
 
               <li><a href="biography.html">Biography</a></li>
               <li><a href="tribute.html">Tribute</a></li>
+              <li><a href="memories.html">Memories</a></li>
               <li><a href="gallery.html">Gallery</a></li>
             </ul>
           </div>
@@ -34,23 +47,81 @@
 
       <div class="zoom">
         <img
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/927610/pexels-photo-587409.jpeg"
+          src="images/gallery-1.png"
         />
 
         <div class="zoom-txt">
-          <div class="zoom-heading">
+          <div class="zoom-heading"
+          data-aos="fade-up"
+          data-aos-delay="300">
             <h1>Honoring life</h1>
           </div>
-          <p class="hero-sub">In rememberance of Paa Offei</p>
+          <p class="hero-sub" data-aos="fade-up"
+          data-aos-delay="450" >In rememberance of Emmanuel Offei Koram (a.k.a. Ackork)</p>
         </div>
       </div>
     </header>
     <main role="main">
+      <section class="content arrangements">
+        <h1 data-funeral="Arrangements" class="family-wishing__title" data-aos="fade-up" 
+        data-aos-easing="ease-in-out">
+          Funeral Dates
+        </h1>
+        <div class="parent">
+          <div class="child" data-aos="flip-up">
+            <b>PRE-BURIAL SERVICE:</b>
+            <p>
+              Saturday 6 May 2023 at the Presbyterian Church of Ghana, Kaneshie
+              Congregaton at 7:00am
+            </p>
+          </div>
+          <div class="child" data-aos="flip-up"      data-aos-easing="ease-out-back"
+          data-aos-delay="300">
+            <b>BURIAL SERVICE:</b>
+            <p>
+              Saturday 6 May 2023 at the Presbyterian Church of Ghana, Kaneshie
+              Congregaton at 7:00am
+            </p>
+          </div>
+          <div class="child" data-aos="flip-down" 
+          data-aos-easing="ease-out-back" data-aos-delay="450">
+            <b>BURIAL:</b>
+            <p>
+              Saturday 6 May 2023 at the Presbyterian Church of Ghana, Kaneshie
+              Congregaton at 7:00am
+            </p>
+          </div>
+          <div class="child" data-aos="flip-down" data-aos-easing="ease-out-back" data-aos-delay="600">
+            <b>FUNERAL RITES:</b>
+            <p>
+              Saturday 6 May 2023 at the Presbyterian Church of Ghana, Kaneshie
+              Congregaton at 7:00am
+            </p>
+          </div>
+          <div class="child" data-aos="flip-up" data-aos-easing="ease-out-back"
+          data-aos-delay="750">
+            <b>THANKSGIVING SERVICE:</b>
+            <p>
+              Sunday 7 May 2023 at the Presbyterian Church of Ghana, Kaneshie
+              Congregaton at 8:00am
+            </p>
+          </div>
+          <div class="child" data-aos="flip-up" data-aos-easing="ease-out-back"
+          data-aos-delay="900">
+            <b>ATTIRE:</b>
+            <p>Saturday, Black and White; Sunday, White.</p>
+          </div>
+        </div>
+      </section>
       <section class="conten">
         <div class="card">
-          <div class="card-img"></div>
+          <div class="card-img" data-aos="fade-right" 
+          data-aos-easing="ease-in-out"
+          data-aos-delay="300"></div>
 
-          <div class="description">
+          <div class="description" data-aos="fade-left" 
+          data-aos-easing="linear"
+          data-aos-delay="300">
             <div class="card-header" style="word-wrap: break-word">
               <h1 style="font-weight: normal">Watch the service live</h1>
             </div>
@@ -58,58 +129,40 @@
               You can experience the whole service live from anywhere you are in
               the world and grieve with the family as they grieve.
             </div>
-            <button class="btn"><a href="#">Watch Live</a></button>
+            <button class="btn"><a href="#">Watch Service Live</a></button>
+            <button class="btn outline"><a href="#">Download Brochure</a></button>
           </div>
         </div>
       </section>
-      <section class="content family-wishing">
-        <h1 class="family-wishing__title" data-content="Family Wish">
-          Family Wish
-        </h1>
-        <div class="family">
-          <div class="fam-wish">
-            <div class="fam-txt">
-              <h1 style="padding-bottom: 20px">God Richly Bless You</h1>
-              <p class="lato">
-                The Koram Family wishes to express our profound gratitude to
-                you, for your prayers, your presence, your generous donations,
-                love, and support in diverse ways during our time of
-                bereavement. The Koram Family wishes to express our profound
-                gratitude to you, for your prayers, your presence, your generous
-                donations, love, and support in diverse ways during our time of
-                bereavement. God Richly Bless You.
-              </p>
-            </div>
-            <div class="fam-pic">
-              <img
-                class="pic"
-                src="images/family-img.jpg"
-                alt="Family Picture"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="conten" style="margin-bottom: 40px">
+      <section class="conten" style="margin-bottom: 40px; margin-top: 100px;">
         <div id="scene" class="d-flex" style="height: 100vh">
           <div data-depth="0.2">
             <img
               src="/images/bg-bio.jpg"
               style="width: 100vw; height: fit-content"
-              alt=""
+              alt="Paa Offei"
+              data-aos="zoom-out" 
+              data-aos-easing="ease-in-out"
+              data-aos-delay="300"
             />
           </div>
-          <div class="auto-text" data-depth="0.6">
-            <h1 class="auto-text__title">Biography</h1>
+          <div class="auto-text" data-depth="0.6"  >
+            <h1 class="auto-text__title" data-aos="fade-right" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="450">Biography</h1>
 
-            <p class="auto-text__desc">
+            <p class="auto-text__desc" data-aos="fade-right" 
+            
+            data-aos-delay="600">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est sint
               nostrum consequuntur corporis dolorem reprehenderit voluptatibus!
               Labore tenetur beatae corrupti, porro repellat sequi provident
               blanditiis! Ipsam iusto natus eos atque.
             </p>
 
-            <button class="btn btn__bio">
+            <button class="btn btn__bio" data-aos="fade-right" 
+            data-aos-easing="ease-out"
+            data-aos-delay="650">
               <a href="biography.html">Read More</a>
             </button>
           </div>
@@ -119,114 +172,137 @@
             <img
               src="/images/bg-bio.jpg"
               style="width: 100vw; height: auto; max-width: 100%;"
-              alt=""
+              alt="Paa Offei smiling"
+              data-aos="zoom-out" 
+              data-aos-easing="ease-in-out"
+              data-aos-delay="300"
             />
           </div>
           <div class="auto-text" data-depth="0.6">
-            <h1 class="auto-text__title">Biography</h1>
+            <h1 class="auto-text__title" data-aos="fade-right" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="450">Biography</h1>
 
-            <p class="auto-text__desc">
+            <p class="auto-text__desc" data-aos="fade-right" 
+            data-aos-delay="600">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est sint
               nostrum consequuntur corporis dolorem reprehenderit voluptatibus!
               Labore tenetur beatae corrupti, porro repellat sequi provident
               blanditiis! Ipsam iusto natus eos atque.
             </p>
 
-            <button class="btn btn__bio">
-              <a href="biography.html">Read More</a>
+            <button class="btn btn__bio" data-aos="fade-right" 
+            data-aos-easing="ease-out"
+            data-aos-delay="650">
+              <a href="biography.html" >Read More</a>
             </button>
           </div>
         </div>
       </section>
-      <section class="content arrangements">
-        <h1 data-funeral="Arrangements" class="family-wishing__title">
-          Funeral Dates
+      <section class="content family-wishing">
+        <h1 class="family-wishing__title" data-content="Family Wish"  data-aos="fade-up" 
+        data-aos-easing="ease-in-out">
+          Family Wish
         </h1>
-        <div class="parent">
-          <div class="child">
-            <b>PRE-BURIAL SERVICE:</b>
-            <p>
-              Saturday 6 May 2023 at the Presbyterian Church of Ghana, Kaneshie
-              Congregaton at 7:00am
-            </p>
-          </div>
-          <div class="child">
-            <b>BURIAL SERVICE:</b>
-            <p>
-              Saturday 6 May 2023 at the Presbyterian Church of Ghana, Kaneshie
-              Congregaton at 7:00am
-            </p>
-          </div>
-          <div class="child">
-            <b>BURIAL:</b>
-            <p>
-              Saturday 6 May 2023 at the Presbyterian Church of Ghana, Kaneshie
-              Congregaton at 7:00am
-            </p>
-          </div>
-          <div class="child">
-            <b>FUNERAL RITES:</b>
-            <p>
-              Saturday 6 May 2023 at the Presbyterian Church of Ghana, Kaneshie
-              Congregaton at 7:00am
-            </p>
-          </div>
-          <div class="child">
-            <b>THANKSGIVING SERVICE:</b>
-            <p>
-              Sunday 7 May 2023 at the Presbyterian Church of Ghana, Kaneshie
-              Congregaton at 8:00am
-            </p>
-          </div>
-          <div class="child">
-            <b>ATTIRE:</b>
-            <p>Saturday, Black and White; Sunday, White.</p>
+        <div class="family">
+          <div class="fam-wish">
+            <div class="fam-txt">
+              <h1 style="padding-bottom: 20px"  data-aos="fade-right" 
+              data-aos-easing="ease-in-out"
+              data-aos-delay="300" >God Richly Bless You</h1>
+              <p class="lato" data-aos="fade-right" 
+              data-aos-easing="ease-in-out"
+              data-aos-delay="450">
+                The Koram Family wishes to express our profound gratitude to
+                you, for your prayers, your presence, your generous donations,
+                love, and support in diverse ways during our time of
+                bereavement. The Koram Family wishes to express our profound
+                gratitude to you, for your prayers, your presence, your generous
+                donations, love, and support in diverse ways during our time of
+                bereavement. God Richly Bless You.
+              </p>
+            </div>
+            <div class="fam-pic" data-aos="flip-right" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="450">
+              <img
+                class="pic"
+                src="images/family-img.jpg"
+                alt="Family Picture"
+                
+              />
+            </div>
           </div>
         </div>
       </section>
+    
+     
       <section class="carousel">
-        <h1 class="family-wishing__title" style="text-align:center;" data-gallery="Gallery">Gallery</em></h1>
+        <h1 class="family-wishing__title" style="text-align:center;" data-gallery="Gallery"
+        data-aos="zoom-out" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="450">Gallery</em></h1>
 
         <div class="slider full-bleed">
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="300">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="450">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="600">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="750">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="900">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="1050">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="1200">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="1350">
             <div class="slide"></div>
           </div>
-          <div class="slidewrapper">
-            <div class="slide">0</div>
+          <div class="slidewrapper" data-aos="fade-up" 
+            data-aos-easing="ease-in-out"
+            data-aos-delay="1500">
+            <div class="slide"></div>
           </div>
         </div>
       </section>
     </main>
-    <footer>
+    <footer >
       <div class="content">
-       <a  href="https://tee-app.up.railway.app/" style="text-decoration: none"><p style="text-align: center; font-size: 2rem ;color: #fff;">Developed By Tee 💓 &copy; </p> </a> 
+       <a  href="https://www.instagram.com/HakzTv/" style="text-decoration: none"><p style="text-align: center; font-size: 2rem ;color: #fff;">Developed By Tee 💓 &copy; </p> </a> 
       </div>
     </footer>
     <!-- Scripts -->
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
       integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
@@ -236,6 +312,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

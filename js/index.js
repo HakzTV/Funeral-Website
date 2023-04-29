@@ -1,4 +1,33 @@
 
+
+$(function() {
+  AOS.init({
+    duration: 1200
+  });
+
+  onElementHeightChange(document.body, function(){
+    AOS.refresh();
+  });
+});
+
+function onElementHeightChange(elm, callback) {
+    var lastHeight = elm.clientHeight
+    var newHeight;
+    
+    (function run() {
+        newHeight = elm.clientHeight;      
+        if (lastHeight !== newHeight) callback();
+        lastHeight = newHeight;
+
+        if (elm.onElementHeightChangeTimer) {
+          clearTimeout(elm.onElementHeightChangeTimer); 
+        }
+
+        elm.onElementHeightChangeTimer = setTimeout(run, 200);
+    })();
+  }
+
+
 // Hero section
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
@@ -68,3 +97,18 @@ slider.addEventListener("mouseenter", () => {
 slider.addEventListener("mouseleave", () => {
   slideInterval = setInterval(nextSlide, 5000);
 });
+
+let tl = gsap.timeline({
+  defaults:{ease: "power2.out"}
+});
+const content = document.querySelectorAll('section')
+
+const imgLoad = imagesLoaded(content)
+
+imgLoad.on('done', instance =>{
+  tl.to('.blinder', {
+    scaleY: 0,
+    stagger:.3,
+    ease:'power3.out' 
+  })
+})
