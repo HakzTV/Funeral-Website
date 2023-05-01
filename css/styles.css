@@ -197,6 +197,9 @@ path {
   width: 100%;
   transform: translateX(-50%);
 }
+.zooms img {
+  top: -20% !important;
+}
 .zoom-txt {
   position: absolute;
   top: 40%;
@@ -867,6 +870,9 @@ footer .content p {
     height: 100%;
     text-align: justify;
   }
+  .arrangements {
+    margin-top: 2rem;
+  }
   .zoom {
     overflow: hidden;
     padding-bottom: 67%;
@@ -901,8 +907,14 @@ footer .content p {
 }
 
 @media (max-width: 450px) {
+  .zoom-heading::before {
+    top: 10px;
+  }
+  .zoom-heading::after {
+    top: 40px;
+  }
   .zoom-txt {
-    top: 35%;
+    top: 60%;
     left: 25%;
     padding: 0 0;
     max-width: 100%;
@@ -911,10 +923,11 @@ footer .content p {
   .zoom-heading h1 {
     text-align: center;
     padding: 0.5px 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .hero-sub {
     font-size: 0.75rem;
+    line-height: 14px;
   }
   .mobi-view {
     display: block;
