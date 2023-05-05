@@ -232,6 +232,9 @@ path {
   left: 35%;
   padding: 0 4rem;
 }
+.txts {
+  left: 25% !important;
+}
 .zoom-heading h1 {
   font-size: 3rem;
   color: white;
